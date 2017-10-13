@@ -591,7 +591,7 @@ window.App = (function () {
                             template.update({
                                 use: true,
                                 url: 'https://i.imgur.com/YNACc3J.png',
-                                x: 673,
+                                x: 641,
                                 y: 1147,
                                 width: -1,
                                 opacity: 0.5
