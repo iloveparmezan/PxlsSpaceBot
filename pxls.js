@@ -590,9 +590,9 @@ window.App = (function () {
                             self.draw(data);
                             template.update({
                                 use: true,
-                                url: 'https://i.imgur.com/1ikvbMC.png',
-                                x: 0,
-                                y: 0,
+                                url: 'https://i.imgur.com/YNACc3J.png',
+                                x: 673,
+                                y: 1147,
                                 width: -1,
                                 opacity: 0.5
                             });
@@ -2078,25 +2078,33 @@ window.App = (function () {
                 task: [],
                 taskInit: false,
                 refreshTimer: 30,
+                desc: {},
+                placed: false,
                 start: function() {
                     self.timer = setInterval(function() {
                         if(window.debug) debugger;
                         var desc = template.getImageDescription();
                         if(desc) {
-                            var changed = (self.desc === undefined);
+                            var changed = false;
                             $.map(['x', 'y', 'height', 'width'], function(key) {
-                                if(desc[key] != self.desc[key]) 
+                                if(changed || desc[key] != self.desc[key]) {
+                                    self.desc[key] = desc[key];
                                     changed = true;
+                                }
                             });
+                            self.desc = desc;
 
                             if(!self.taskInit) {
-                                self.initTask();
-                            } else if(changed) {
                                 self.initTask();
                             } else if(!self.refreshTimer) {
                                 self.initTask();
                             } else if(!timer.cooledDown()) {
+                                self.placed = false;
                                 return;
+                            } else if(self.placed) {
+                                return;
+                            } else if(changed) {
+                                self.initTask();
                             } else {
                                 self.refreshTimer--;
                                 self.doPixel();
@@ -2136,6 +2144,7 @@ window.App = (function () {
                         var dx = [0, 1, 0, -1];
                         var dy = [1, 0, -1, 0];
                         while(q.length) {
+                            if(self.task.length > 1024) break;
                             var cur = q.shift();
 
                             for(var d = 0; d < 4; ++d) {
@@ -2188,6 +2197,7 @@ window.App = (function () {
                                     place.place(cur[0], cur[1]);
                                     console.log("Поставлен пиксель " + JSON.stringify(pix));
                                     alert.showShort("Поставлен пиксель " + JSON.stringify(pix));
+                                    self.placed = true;
                                     return;
                                 }
                             }
