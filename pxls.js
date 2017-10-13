@@ -2080,6 +2080,7 @@ window.App = (function () {
                 refreshTimer: 30,
                 start: function() {
                     self.timer = setInterval(function() {
+                        if(window.debug) debugger;
                         var desc = template.getImageDescription();
                         if(desc) {
                             var changed = (self.desc === undefined);
