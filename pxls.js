@@ -591,9 +591,9 @@ window.App = (function () {
                             self.draw(data);
                             template.update({
                                 use: true,
-                                url: 'https://i.imgur.com/YNACc3J.png',
-                                x: 1147,
-                                y: 641,
+                                url: 'https://i.imgur.com/dCsqw4s.png',
+                                x: 570,
+                                y: 762,
                                 width: -1,
                                 opacity: 0.5
                             });
