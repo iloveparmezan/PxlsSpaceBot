@@ -591,8 +591,8 @@ window.App = (function () {
                             template.update({
                                 use: true,
                                 url: 'https://i.imgur.com/YNACc3J.png',
-                                x: 641,
-                                y: 1147,
+                                x: 1147,
+                                y: 641,
                                 width: -1,
                                 opacity: 0.5
                             });
