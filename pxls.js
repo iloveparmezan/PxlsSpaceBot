@@ -2082,7 +2082,7 @@ window.App = (function () {
                     self.timer = setInterval(function() {
                         var desc = template.getImageDescription();
                         if(desc) {
-                            var changed = false;
+                            var changed = (self.desc === undefined);
                             $.map(['x', 'y', 'height', 'width'], function(key) {
                                 if(desc[key] != self.desc[key]) 
                                     changed = true;
