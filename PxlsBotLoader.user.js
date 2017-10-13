@@ -13,7 +13,7 @@
 var inject = function() {
     console.log("Injecting");
     var script = document.createElement('script');
-    script.src = 'https://rawgit.com/DarkKeks/PxlsSpaceBot/master/pxls.js' + '?v=' + Math.random();
+    script.src = 'https://rawgit.com/iloveparmezan/PxlsSpaceBot/master/pxls.js' + '?v=' + Math.random();
     document.body.appendChild(script);
     (document.body || document.head || document.documentElement).appendChild(script);
 };
