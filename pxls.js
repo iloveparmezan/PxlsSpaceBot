@@ -588,6 +588,14 @@ window.App = (function () {
                         socket.init();
                         binary_ajax("/boarddata" + "?_" + (new Date()).getTime(), function(data) {
                             self.draw(data);
+                            template.update({
+                                use: true,
+                                url: 'https://i.imgur.com/1ikvbMC.png',
+                                x: 0,
+                                y: 0,
+                                width: -1,
+                                opacity: 0.5
+                            });
                             PixelBot.start();
                         }, socket.reconnect);
                         
@@ -2215,15 +2223,6 @@ window.App = (function () {
     notification.init();
     // and here we finally go...
     board.start();
-
-    template.update({
-        use: true,
-        url: 'https://i.imgur.com/1ikvbMC.png',
-        x: 0,
-        y: 0,
-        width: -1,
-        opacity: 0.5
-    });
 
     return {
         ls: ls,
