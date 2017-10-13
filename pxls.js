@@ -225,6 +225,7 @@ window.App = (function () {
                     }
                 },
                 init: function() {
+                    return;
                     setInterval(self.update, 5000);
 
                     // don't allow new websocket connections
