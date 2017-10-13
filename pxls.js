@@ -2080,7 +2080,6 @@ window.App = (function () {
                 taskInit: false,
                 refreshTimer: 30,
                 desc: {},
-                placed: false,
                 start: function() {
                     self.timer = setInterval(function() {
                         if(window.debug) debugger;
@@ -2100,9 +2099,6 @@ window.App = (function () {
                             } else if(!self.refreshTimer) {
                                 self.initTask();
                             } else if(!timer.cooledDown()) {
-                                self.placed = false;
-                                return;
-                            } else if(self.placed) {
                                 return;
                             } else if(changed) {
                                 self.initTask();
@@ -2198,7 +2194,6 @@ window.App = (function () {
                                     place.place(cur[0], cur[1]);
                                     console.log("Поставлен пиксель " + JSON.stringify(pix));
                                     alert.showShort("Поставлен пиксель " + JSON.stringify(pix));
-                                    self.placed = true;
                                     return;
                                 }
                             }
