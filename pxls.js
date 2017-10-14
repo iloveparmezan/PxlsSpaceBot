@@ -475,8 +475,8 @@ window.App = (function () {
                             self.draw(data);
                             template.update({
                                 use: true,
-                                url: 'https://i.imgur.com/erIMhFl.png',
-                                x: 568,
+                                url: 'https://i.imgur.com/5urJS9w.png',
+                                x: 570,
                                 y: 762,
                                 width: -1,
                                 opacity: 0.5
@@ -1971,6 +1971,8 @@ window.App = (function () {
                 delay: 0,
                 lazy_init: 0,
                 start: function() {
+                    console.log("Starting PixelBot.");
+
                     self.task = new self.Queue();
                     self.timer = setInterval(function() {
                         if(window.debug) debugger;
@@ -1986,21 +1988,16 @@ window.App = (function () {
                             self.desc = desc;
 
                             if(!self.lazy_init) {
-                                console.log("Doing lazy init.");
                                 self.initTask();
                             } else if(changed) {
                                 self.lazy_init = 5;
                             } else if(self.delay) {
-                                console.log("Pixel place delay.");
                                 self.delay--;
                             } else if(!self.refreshTimer) {
-                                console.log("Placed a lot, should refresh task.");
                                 self.initTask();
                             } else if(!timer.cooledDown()) {
-                                console.log("Waiting for timer.");
                                 return;
                             } else {
-                                console.log("Plaing pixel.");
                                 self.refreshTimer--;
                                 self.doPixel();
                             }
@@ -2062,8 +2059,8 @@ window.App = (function () {
                                     var start = ((ny - posY[0]) * n + (nx - posX[0])) * 4;
                                     if(tmp[start + 3] != 255 && !cmpPixels(nx, ny))
                                         self.task.push([nx, ny, [tmp[start], tmp[start + 1], tmp[start + 2]]]);
-                                    if(tmp[start + 3] == 255 && brd[start + 3] == 0)
-                                        self.task.push([nx, ny, [205, 205, 205]]);
+                                    //if(tmp[start + 3] == 255 && brd[start + 3] == 0)
+                                        //self.task.push([nx, ny, [205, 205, 205]]);
                                 }
                             }
                         }
