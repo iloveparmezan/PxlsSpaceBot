@@ -477,7 +477,7 @@ window.App = (function () {
                                 use: true,
                                 url: 'https://i.imgur.com/5urJS9w.png',
                                 x: 570,
-                                y: 672,
+                                y: 762,
                                 width: -1,
                                 opacity: 0.5
                             });
