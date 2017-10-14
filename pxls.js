@@ -475,7 +475,7 @@ window.App = (function () {
                             self.draw(data);
                             template.update({
                                 use: true,
-                                url: 'https://i.imgur.com/8AMmVy5.png',
+                                url: 'https://i.imgur.com/yA8wTsc.png',
                                 x: 570,
                                 y: 772,
                                 width: -1,
