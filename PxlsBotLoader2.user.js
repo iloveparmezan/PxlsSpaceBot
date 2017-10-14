@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Pxls Bot Loader
+// @name         Pxls Bot Loader 2
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  try to take over the world!
