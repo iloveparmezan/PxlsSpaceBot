@@ -475,9 +475,9 @@ window.App = (function () {
                             self.draw(data);
                             template.update({
                                 use: true,
-                                url: 'https://i.imgur.com/Tfo1HE3.png',
+                                url: 'https://i.imgur.com/dJixaNt.png',
                                 x: 568,
-                                y: 822,
+                                y: 762,
                                 width: -1,
                                 opacity: 0.5
                             });
